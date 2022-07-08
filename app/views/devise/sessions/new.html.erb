@@ -1,0 +1,54 @@
+<%= render 'home/header2' %>
+<section class="flex-shrink-0">
+   <div class="container-fluid">
+      <div class="container pt-4 pb-7 ">
+         <div class="row justify-content-center">
+            <div class="col-12 col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 col-xxl-4 ">
+               <div class="row">
+                  <div class="col-12  ">
+                     <h1 class="col-dark-blue f-m-1 ">Log In</h1>
+                     <p class="f-l-4-regular  m-0 text-black pt-3 pb-4">New to Flux?  <span class="col-primary f-l-4-bold"><a class="col-primary" href="/users/sign_up">Create an account</a></span></p>
+                     <div class="mb-3">
+                     <label for="exampleFormControlInput1" class="form-label-box pb-2">Email address</label>
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control-box f-l-primary-regular" %>
+  </div>
+  <label for="exampleFormControlInput1" class="form-label-box pb-2">Password</label>
+  <div class="field">
+    
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-control-box f-l-primary-regular" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me, class: "form-check-label" %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="d-grid gap-2">
+  <%= f.submit "Sign up", class:"btn btn-primary-flux  sh-filter-button f-l-button-bold sh-filter-button" %>
+</div>
+  <p class="f-l-secondary-regular col-gray pt-4 m-0">
+                        <span class="pe-2 align-bottom">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="23" viewBox="0 0 18 23" fill="none">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M15.75 9.25C16.9909 9.25 18 10.2591 18 11.5V20.5C18 21.7409 16.9909 22.75 15.75 22.75H2.25C1.00912 22.75 0 21.7409 0 20.5V11.5C0 10.2591 1.00912 9.25 2.25 9.25H3.375V5.875C3.375 2.77337 5.89838 0.25 9 0.25C12.1016 0.25 14.625 2.77337 14.625 5.875V9.25H15.75ZM9 2.5C7.13925 2.5 5.625 4.01425 5.625 5.875V9.25H12.375V5.875C12.375 4.01425 10.8608 2.5 9 2.5ZM10.1081 18.371V17.561H8.48812V14H7.47412V18.371H10.1081ZM13.8622 14.936C13.8322 14.984 13.8002 15.02 13.7662 15.044C13.7342 15.068 13.6922 15.08 13.6402 15.08C13.5942 15.08 13.5442 15.066 13.4902 15.038C13.4382 15.008 13.3782 14.975 13.3102 14.939C13.2442 14.903 13.1682 14.871 13.0822 14.843C12.9962 14.813 12.8982 14.798 12.7882 14.798C12.5982 14.798 12.4562 14.839 12.3622 14.921C12.2702 15.001 12.2242 15.11 12.2242 15.248C12.2242 15.336 12.2522 15.409 12.3082 15.467C12.3642 15.525 12.4372 15.575 12.5272 15.617C12.6192 15.659 12.7232 15.698 12.8392 15.734C12.9572 15.768 13.0772 15.807 13.1992 15.851C13.3212 15.893 13.4402 15.943 13.5562 16.001C13.6742 16.059 13.7782 16.133 13.8682 16.223C13.9602 16.313 14.0342 16.423 14.0902 16.553C14.1462 16.681 14.1742 16.836 14.1742 17.018C14.1742 17.22 14.1392 17.409 14.0692 17.585C13.9992 17.761 13.8972 17.915 13.7632 18.047C13.6312 18.177 13.4672 18.28 13.2712 18.356C13.0772 18.43 12.8562 18.467 12.6082 18.467C12.4722 18.467 12.3332 18.453 12.1912 18.425C12.0512 18.397 11.9152 18.358 11.7832 18.308C11.6512 18.256 11.5272 18.195 11.4112 18.125C11.2952 18.055 11.1942 17.977 11.1082 17.891L11.4082 17.417C11.4322 17.383 11.4632 17.355 11.5012 17.333C11.5412 17.309 11.5842 17.297 11.6302 17.297C11.6902 17.297 11.7502 17.316 11.8102 17.354C11.8722 17.392 11.9412 17.434 12.0172 17.48C12.0952 17.526 12.1842 17.568 12.2842 17.606C12.3842 17.644 12.5022 17.663 12.6382 17.663C12.8222 17.663 12.9652 17.623 13.0672 17.543C13.1692 17.461 13.2202 17.332 13.2202 17.156C13.2202 17.054 13.1922 16.971 13.1362 16.907C13.0802 16.843 13.0062 16.79 12.9142 16.748C12.8242 16.706 12.7212 16.669 12.6052 16.637C12.4892 16.605 12.3702 16.57 12.2482 16.532C12.1262 16.492 12.0072 16.444 11.8912 16.388C11.7752 16.33 11.6712 16.255 11.5792 16.163C11.4892 16.069 11.4162 15.953 11.3602 15.815C11.3042 15.675 11.2762 15.503 11.2762 15.299C11.2762 15.135 11.3092 14.975 11.3752 14.819C11.4412 14.663 11.5382 14.524 11.6662 14.402C11.7942 14.28 11.9512 14.183 12.1372 14.111C12.3232 14.037 12.5362 14 12.7762 14C12.9102 14 13.0402 14.011 13.1662 14.033C13.2942 14.053 13.4152 14.084 13.5292 14.126C13.6432 14.166 13.7492 14.215 13.8472 14.273C13.9472 14.329 14.0362 14.393 14.1142 14.465L13.8622 14.936ZM5.244 14.804H6.474V14H3V14.804H4.23V18.371H5.244V14.804Z" fill="#1D3038"/>
+                           </svg>
+                        </span>
+                        All data is transmitted encrypted via a secure TLS connection.
+                     </p>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

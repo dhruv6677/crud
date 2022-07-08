@@ -1,0 +1,51 @@
+<%= render 'home/header2' %>
+<section class="flex-shrink-0">
+<div class="container-fluid">
+<div class="container pt-4 pb-7 ">
+<div class="row justify-content-center">
+<div class="col-12 col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 col-xxl-4 ">
+<div class="row">
+<div class="col-12  ">
+<h1 class="col-dark-blue f-m-1 ">Create an Account</h1>
+<p class="f-l-4-regular  m-0 text-black pt-3 pb-4">Already have an account? <span class="col-primary f-l-4-bold"><a class="col-primary" href="/users/sign_in">Log in</a></span></p>
+<div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label-box pb-2">Email address</label>
+   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+   <%= render "devise/shared/error_messages", resource: resource %>
+   <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control-box f-l-primary-regular" %>
+</div>
+<div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label-box pb-2">Password</label>
+   <% if @minimum_password_length %>
+   <em>(<%= @minimum_password_length %> characters minimum)</em>
+   <% end %><br />
+   <%= f.password_field :password, autocomplete: "new-password", class: "form-control-box f-l-primary-regular" %>
+</div>
+<div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label-box pb-2">password_confirmation</label>
+   <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control-box f-l-primary-regular" %>
+</div>
+
+ <div class="d-grid gap-2">
+      <%= f.submit "login in", class:"btn btn-primary-flux  sh-filter-button f-l-button-bold sh-filter-button" %>
+  </div>
+  <% end %>
+
+<%= render "devise/shared/links" %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

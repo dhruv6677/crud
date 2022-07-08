@@ -1,0 +1,57 @@
+
+
+<%=render "home/header2"%>
+
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+<center><h1>create new</h1>
+<%= form_with model:@profile do |form|%>
+<div>
+  <%=form.label :first_name,class: "fw-bold mb-2 text-uppercase"  %><br>
+  <%=form.text_field :first_name, class:"form-control form-control-lg"%> 
+</div>
+<div>
+  <%=form.label :last_name,class: "fw-bold mb-2 text-uppercase"  %><br>
+  <%=form.text_field :last_name, class:"form-control form-control-lg"%> 
+</div>
+<div>
+  <%=form.label :email,class: "fw-bold mb-2 text-uppercase"  %><br>
+  <%=form.text_field :email, class:"form-control form-control-lg"%> 
+</div>
+<div>
+  <%=form.label :phone_no,class: "fw-bold mb-2 text-uppercase"  %><br>
+  <%=form.text_field :phone_no, class:"form-control form-control-lg"%> 
+</div>
+<div>
+
+    <%=form.submit"Create New Profile", class:"btn btn-outline-light btn-lg px-5" %>
+
+  </div>
+</center>
+
+
+<%end%>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<style>.gradient-custom {
+  /* fallback for old browsers */
+  background: #6a11cb;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+  }</style>

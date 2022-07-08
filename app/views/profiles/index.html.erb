@@ -1,0 +1,53 @@
+
+
+<center><h1>List of profiles</h1>
+
+
+<div style="float:right; margin-bottom:7px;">
+<%=  link_to "Create a new profile",  new_profile_path, class:"btn btn-primary" %>
+</div>
+<div style="float:left; margin-bottom:7px;">
+<%=  link_to "<<Dashboard",  home_index_path, class:"btn btn-danger" %>
+</div>
+<table class="table table-success table-hover">
+    <thead class="text-center">
+      <tr>
+        <th >First_name</th>
+        <th>Last_name</th>
+        <th>Email</th>
+        <th>Edit a profile</th>
+        <th>View a profile</th>
+        <th>Delete a profile</th>
+       
+      </tr>
+    </thead>
+
+  <% @profiles.each do |profile| %>
+  <tr>
+    <td> <%= link_to profile.first_name, profiles_path(profile), class:  %> </td>  <td> <%= link_to profile.last_name, profiles_path(profile)  %> </td>
+    <td> <%= link_to profile.email, profiles_path(profile)  %> </td>
+
+    <td> <%= button_to 'Edit', edit_profile_path(profile), method: 'get', class:"btn btn-primary" %> </td>
+    <td> <%= button_to 'View', profile_path(profile), method: 'get',class:"btn btn-primary" %> </td>
+    <td> <%= button_to 'Remove', profile_path(profile), method: 'delete', data:{confirm: 'Are you sure?'}, class:"btn btn-primary"  %> </td>
+
+  </tr>
+  
+  
+  
+  <% end %>
+  </table>
+  
+
+
+  <center>
+  <div class="pagination">
+    <div class="digg_pagination">
+    <div class="page_info">
+    <%= page_entries_info @profiles %>
+    </div>
+    <%= will_paginate @profiles, :container => false %>
+   </div>
+  
+  </div>
+   </center>

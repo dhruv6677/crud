@@ -1,0 +1,27 @@
+<%=render "home/header2"%>
+<center><h1>create new</h1>
+<%= form_with model:@profile do |form|%>
+<div>
+<%=form.label :first_name  %><br>
+<%=form.text_field :first_name%> 
+</div>
+<div>
+<%=form.label :last_name  %><br>
+  <%=form.text_field :last_name%> 
+</div>
+<div>
+<%=form.label :email  %><br>
+<%=form.text_field :email%> 
+</div>
+<div>
+  <%=form.label :phone_no  %><br>
+  <%=form.text_field :phone_no%> 
+</div>
+<div>
+
+    <%=form.submit %>
+  </div>
+</center>
+
+
+<%end%>
